@@ -15,7 +15,7 @@ override_dh_auto_clean:
 
 dwm.c:
 	[ -d "$(CURDIR)/dwm" ] || \
-    git clone --depth 1 --branch $(VERSION) git://git.suckless.org/dwm
+		git clone --depth 1 --branch $(VERSION) git://git.suckless.org/dwm
 	mv dwm/* .
 	rm -rf dwm
 
@@ -25,5 +25,3 @@ override_dh_auto_build: dwm.c
 
 override_dh_auto_install:
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/dwm PREFIX=/usr
-#	mkdir -p debian/findmydeviceserver/usr/bin
-#	mv debian/dwm/usr/bin/dwm debian/dwm/usr/bin/dwm.default

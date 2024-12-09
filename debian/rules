@@ -1,6 +1,7 @@
 #!/usr/bin/make -f
 
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_BUILD_OPTIONS=noautodbgsym
 
 SHELL := sh -e
 VERSION ?= 6.4

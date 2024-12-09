@@ -29,5 +29,5 @@ jobs:
     - name: Release
       uses: softprops/action-gh-release@v2
       with:
-        files: dwm_${{ github.ref_name }}-1_amd64.deb
+        files: dwm_${{ github.ref_name }}-*_amd64.deb
         body_path: ${{ github.workspace }}/debian/changelog

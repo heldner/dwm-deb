@@ -24,7 +24,7 @@ jobs:
           apt install --no-install-recommends -y git quilt devscripts equivs fakeroot build-essential debhelper
           yes | mk-build-deps --install debian/control
           VERSION=${{ github.ref_name }} fakeroot debian/rules binary
-          mv ../dwm_${{ github.ref_name }}-1_amd64.deb .
+          mv ../dwm_${{ github.ref_name }}-*_amd64.deb .
 
     - name: Release
       uses: softprops/action-gh-release@v2

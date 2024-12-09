@@ -1,0 +1,8 @@
+dwm (6.4-1) stable; urgency=low
+
+  * dwm 6.4
+  * debian:
+    - using quilt
+    - first release
+
+ -- Stanislav Korolev <stan.korolev@mail.ru>  Mon, 09 Dec 2024 15:17:44 +0300

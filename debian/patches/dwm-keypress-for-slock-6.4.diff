@@ -1,0 +1,33 @@
+diff --git a/dwm.c b/dwm.c
+index 1008042..59445c4 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -1692,7 +1692,7 @@ setup(void)
+ 	wa.cursor = cursor[CurNormal]->cursor;
+ 	wa.event_mask = SubstructureRedirectMask|SubstructureNotifyMask
+ 		|ButtonPressMask|PointerMotionMask|EnterWindowMask
+-		|LeaveWindowMask|StructureNotifyMask|PropertyChangeMask;
++		|LeaveWindowMask|StructureNotifyMask|PropertyChangeMask|KeyPressMask;
+ 	XChangeWindowAttributes(dpy, root, CWEventMask|CWCursor, &wa);
+ 	XSelectInput(dpy, root, wa.event_mask);
+ 	grabkeys();
+diff --git a/config.def.h b/config.def.h
+index 6a3b7fd..3f43834 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -62,9 +62,15 @@ static const Layout layouts[] = {
+ /* commands */
+ static const char *dmenucmd[] = { "rofi", "-show", "drun", NULL };
+ static const char *termcmd[]  = { "urxvtc", NULL };
++static const char *voldown[]  = { "vol_notify", "down", NULL };
++static const char *volup[]    = { "vol_notify", "up", NULL };
++static const char *voltoggle[] = { "vol_notify", "toggle", NULL };
+ 
+ static const Key keys[] = {
+ 	/* modifier                     key        function        argument */
++	{ 0,                            0x1008ff11, spawn,         {.v = voldown } },
++	{ 0,                            0x1008ff13, spawn,         {.v = volup } },
++	{ 0,                            0x1008ff12, spawn,         {.v = voltoggle } },
+ 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+ 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+ 	{ MODKEY,                       XK_b,      togglebar,      {0} },

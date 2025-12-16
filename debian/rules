@@ -18,9 +18,11 @@ dwm.c:
 	tar xzf dwm-$(VERSION).tar.gz --strip-components=1
 	rm dwm-$(VERSION).tar.gz
 
-override_dh_auto_build: dwm.c
+.pc: dwm.c
 	QUILT_PATCHES=debian/patches quilt push -a
+
+override_dh_auto_build: .pc dwm.c
 	$(MAKE) PREFIX=/usr
 
-override_dh_auto_install:
+override_dh_auto_install: .pc
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/dwm PREFIX=/usr

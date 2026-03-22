@@ -1,8 +1,8 @@
-diff --git a/dwm.c b/dwm.c
-index b7a9042..5deb32d 100644
---- a/dwm.c
-+++ b/dwm.c
-@@ -1085,15 +1085,7 @@ killclient(const Arg *arg)
+Index: dwm/dwm.c
+===================================================================
+--- dwm.orig/dwm.c
++++ dwm/dwm.c
+@@ -1094,15 +1094,7 @@ killclient(const Arg *arg)
  {
  	if (!selmon->sel)
  		return;

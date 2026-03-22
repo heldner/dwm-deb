@@ -1,7 +1,7 @@
-diff --git a/config.def.h b/config.def.h
-index 65377f1..6a3b7fd 100644
---- a/config.def.h
-+++ b/config.def.h
+Index: dwm/config.def.h
+===================================================================
+--- dwm.orig/config.def.h
++++ dwm/config.def.h
 @@ -1,7 +1,8 @@
  /* See LICENSE file for copyright and license details. */
  
@@ -12,16 +12,16 @@ index 65377f1..6a3b7fd 100644
  static const unsigned int snap      = 32;       /* snap pixel */
  static const int showbar            = 1;        /* 0 means no bar */
  static const int topbar             = 1;        /* 0 means bottom bar */
-@@ -116,4 +117,3 @@ static const Button buttons[] = {
+@@ -117,4 +118,3 @@ static const Button buttons[] = {
  	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
  	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
  };
 -
-diff --git a/dwm.c b/dwm.c
-index 5deb32d..1008042 100644
---- a/dwm.c
-+++ b/dwm.c
-@@ -1121,6 +1121,8 @@ manage(Window w, XWindowAttributes *wa)
+Index: dwm/dwm.c
+===================================================================
+--- dwm.orig/dwm.c
++++ dwm/dwm.c
+@@ -1130,6 +1130,8 @@ manage(Window w, XWindowAttributes *wa)
  	c->x = MAX(c->x, c->mon->wx);
  	c->y = MAX(c->y, c->mon->wy);
  	c->bw = borderpx;
@@ -30,7 +30,7 @@ index 5deb32d..1008042 100644
  
  	wc.border_width = c->bw;
  	XConfigureWindow(dpy, w, CWBorderWidth, &wc);
-@@ -1822,9 +1824,16 @@ togglefloating(const Arg *arg)
+@@ -1840,9 +1842,16 @@ togglefloating(const Arg *arg)
  	if (selmon->sel->isfullscreen) /* no support for fullscreen windows */
  		return;
  	selmon->sel->isfloating = !selmon->sel->isfloating || selmon->sel->isfixed;

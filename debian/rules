@@ -4,7 +4,7 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 export DEB_BUILD_OPTIONS=noautodbgsym
 
 SHELL := sh -e
-VERSION ?= 6.4
+VERSION ?= 6.8
 
 %:
 	dh ${@}
@@ -14,7 +14,7 @@ override_dh_auto_clean:
 	$(MAKE) clean
 
 dwm-$(VERSION).tar.gz:
-	curl -s -L -O https://dl.suckless.org/dwm/dwm-$(VERSION).tar.gz
+	curl --socks5 localhost:2342 -s -L -O https://dl.suckless.org/dwm/dwm-$(VERSION).tar.gz
 
 dwm.c: dwm-$(VERSION).tar.gz
 	tar xzf dwm-$(VERSION).tar.gz --strip-components=1

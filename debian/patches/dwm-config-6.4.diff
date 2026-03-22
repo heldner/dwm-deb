@@ -55,7 +55,7 @@ index 0f42eef..3ee980b 100644
 -static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 -static const char *termcmd[]  = { "st", NULL };
 +static const char *dmenucmd[] = { "rofi", "-show", "drun", NULL };
-+static const char *termcmd[]  = { "urxvtc", NULL };
++static const char *termcmd[]  = { "kitty", "-1", NULL };
 
  static const Key keys[] = {
  	/* modifier                     key        function        argument */

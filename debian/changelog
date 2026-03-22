@@ -1,3 +1,9 @@
+dwm (6.4-3) stable; urgency=low
+
+  * repalce urxvt with kitty
+
+ -- Stanislav Korolev <stan.korolev@mail.ru>  Sun, 22 Mar 2026 14:52:13 +0300
+
 dwm (6.4-2) stable; urgency=low
 
   * dwm 6.4

@@ -18,11 +18,11 @@ index 6a3b7fd..3f43834 100644
 @@ -62,9 +62,15 @@ static const Layout layouts[] = {
  /* commands */
  static const char *dmenucmd[] = { "rofi", "-show", "drun", NULL };
- static const char *termcmd[]  = { "urxvtc", NULL };
+ static const char *termcmd[]  = { "kitty", "-1", NULL };
 +static const char *voldown[]  = { "vol_notify", "down", NULL };
 +static const char *volup[]    = { "vol_notify", "up", NULL };
 +static const char *voltoggle[] = { "vol_notify", "toggle", NULL };
- 
+
  static const Key keys[] = {
  	/* modifier                     key        function        argument */
 +	{ 0,                            0x1008ff11, spawn,         {.v = voldown } },

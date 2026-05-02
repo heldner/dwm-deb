@@ -1,8 +1,8 @@
-diff --git a/dwm.c b/dwm.c
-index 1008042..59445c4 100644
---- a/dwm.c
-+++ b/dwm.c
-@@ -1692,7 +1692,7 @@ setup(void)
+Index: dwm/dwm.c
+===================================================================
+--- dwm.orig/dwm.c
++++ dwm/dwm.c
+@@ -1708,7 +1708,7 @@ setup(void)
  	wa.cursor = cursor[CurNormal]->cursor;
  	wa.event_mask = SubstructureRedirectMask|SubstructureNotifyMask
  		|ButtonPressMask|PointerMotionMask|EnterWindowMask
@@ -11,14 +11,14 @@ index 1008042..59445c4 100644
  	XChangeWindowAttributes(dpy, root, CWEventMask|CWCursor, &wa);
  	XSelectInput(dpy, root, wa.event_mask);
  	grabkeys();
-diff --git a/config.def.h b/config.def.h
-index 6a3b7fd..3f43834 100644
---- a/config.def.h
-+++ b/config.def.h
-@@ -62,9 +62,15 @@ static const Layout layouts[] = {
+Index: dwm/config.def.h
+===================================================================
+--- dwm.orig/config.def.h
++++ dwm/config.def.h
+@@ -63,9 +63,15 @@ static const Layout layouts[] = {
  /* commands */
  static const char *dmenucmd[] = { "rofi", "-show", "drun", NULL };
- static const char *termcmd[]  = { "urxvtc", NULL };
+ static const char *termcmd[]  = { "kitty", "-1", NULL };
 +static const char *voldown[]  = { "vol_notify", "down", NULL };
 +static const char *volup[]    = { "vol_notify", "up", NULL };
 +static const char *voltoggle[] = { "vol_notify", "toggle", NULL };

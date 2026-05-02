@@ -1,8 +1,8 @@
-diff --git a/config.def.h b/config.def.h
-index 061ad66..0f42eef 100644
---- a/config.def.h
-+++ b/config.def.h
-@@ -74,7 +74,8 @@ static const Key keys[] = {
+Index: dwm/config.def.h
+===================================================================
+--- dwm.orig/config.def.h
++++ dwm/config.def.h
+@@ -76,7 +76,8 @@ static const Key keys[] = {
  	{ MODKEY,                       XK_Tab,    view,           {0} },
  	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
  	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
@@ -12,11 +12,11 @@ index 061ad66..0f42eef 100644
  	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
  	{ MODKEY,                       XK_space,  setlayout,      {0} },
  	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-diff --git a/dwm.c b/dwm.c
-index e5efb6a..4f4c11f 100644
---- a/dwm.c
-+++ b/dwm.c
-@@ -212,6 +212,7 @@ static void tagmon(const Arg *arg);
+Index: dwm/dwm.c
+===================================================================
+--- dwm.orig/dwm.c
++++ dwm/dwm.c
+@@ -210,6 +210,7 @@ static void tagmon(const Arg *arg);
  static void tile(Monitor *m);
  static void togglebar(const Arg *arg);
  static void togglefloating(const Arg *arg);
@@ -24,17 +24,17 @@ index e5efb6a..4f4c11f 100644
  static void toggletag(const Arg *arg);
  static void toggleview(const Arg *arg);
  static void unfocus(Client *c, int setfocus);
-@@ -1717,6 +1718,13 @@ togglefloating(const Arg *arg)
- 	arrange(selmon);
+@@ -1736,6 +1737,13 @@ togglefloating(const Arg *arg)
  }
  
-+void
+ void
 +togglefullscr(const Arg *arg)
 +{
 +  if(selmon->sel)
 +    setfullscreen(selmon->sel, !selmon->sel->isfullscreen);
 +}
 +
- void
++void
  toggletag(const Arg *arg)
  {
+ 	unsigned int newtags;

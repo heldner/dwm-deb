@@ -1,3 +1,16 @@
+dwm (6.8-1) stable; urgency=low
+
+  * upgrade to dwm 6.8
+  * update all patches for 6.8
+
+ -- Stanislav Korolev <stan.korolev@mail.ru>  Sun, 22 Mar 2026 19:00:00 +0300
+
+dwm (6.4-3) stable; urgency=low
+
+  * repalce urxvt with kitty
+
+ -- Stanislav Korolev <stan.korolev@mail.ru>  Sun, 22 Mar 2026 14:52:13 +0300
+
 dwm (6.4-2) stable; urgency=low
 
   * dwm 6.4
